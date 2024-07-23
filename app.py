@@ -33,6 +33,11 @@ def predict_market_value(input_data):
 def before_first_request():
     initialize_model()
 
+@app.route('/')
+def home():
+    return 'Welcome to the FIFA Player Market Value Prediction API!'
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     input_data = request.get_json()
